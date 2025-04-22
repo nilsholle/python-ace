@@ -405,7 +405,7 @@ build_cluster_pbc(py::array_t<DOUBLE_TYPE, py::array::c_style | py::array::force
     // v1/v2
     v = north(v1, v2);
     x = dot(v3, v);
-    if (x < 1e-3)
+    if (abs(x) < 1e-3)
         throw std::runtime_error("Extreme shape of unit cell");
     DOUBLE_TYPE dxhc3 = 1 + rcut / x;
     DOUBLE_TYPE dxlc3 = -dxhc3 + 1.0;
@@ -415,7 +415,7 @@ build_cluster_pbc(py::array_t<DOUBLE_TYPE, py::array::c_style | py::array::force
     // v3/v1
     v = north(v3, v1);
     x = dot(v2, v);
-    if (x < 1e-3)
+    if (abs(x) < 1e-3)
         throw std::runtime_error("Extreme shape of unit cell");
     DOUBLE_TYPE dxhc2 = 1 + rcut / x;
     DOUBLE_TYPE dxlc2 = -dxhc2 + 1.0;
@@ -425,7 +425,7 @@ build_cluster_pbc(py::array_t<DOUBLE_TYPE, py::array::c_style | py::array::force
     // v2/v3
     v = north(v2, v3);
     x = dot(v1, v);
-    if (x < 1e-3)
+    if (abs(x) < 1e-3)
         throw std::runtime_error("Extreme shape of unit cell");
     DOUBLE_TYPE dxhc1 = 1 + rcut / x;
     DOUBLE_TYPE dxlc1 = -dxhc1 + 1.0;

@@ -261,7 +261,7 @@ def main(args):
             log.info("For train data")
             pred_data = predict_and_save(general_fit, target_bbasisconfig, general_fit.fitting_data,
                                          fname="train_pred.pckl.gzip")
-            log.info("Ploting validation graphs")
+            log.info("Plotting validation graphs")
             plot_analyse_error_distributions(pred_data, fig_prefix="train_", fig_path="report",
                                              imagetype=backend_config.get("imagetype", "png"))
 
@@ -269,7 +269,7 @@ def main(args):
             log.info("For test data")
             pred_data = predict_and_save(general_fit, target_bbasisconfig, general_fit.test_data,
                                          fname="test_pred.pckl.gzip")
-            log.info("Ploting validation graphs")
+            log.info("Plotting validation graphs")
             plot_analyse_error_distributions(pred_data, fig_prefix="test_", fig_path="report",
                                              imagetype=backend_config.get("imagetype", "png"))
 
